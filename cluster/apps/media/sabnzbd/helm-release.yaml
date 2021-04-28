@@ -25,7 +25,7 @@ spec:
     ingress:
       enabled: true
       annotations:
-        kubernetes.io/ingress.class: "external"
+        kubernetes.io/ingress.class: "nginx"
         nginx.ingress.kubernetes.io/auth-url: "https://auth.${SECRET_CLUSTER_DOMAIN}/oauth2/auth"
         nginx.ingress.kubernetes.io/auth-signin: "https://auth.${SECRET_CLUSTER_DOMAIN}/oauth2/start"
         nginx.ingress.kubernetes.io/configuration-snippet: |
@@ -46,7 +46,7 @@ spec:
       - enabled: true
         nameSuffix: "api"
         annotations:
-          kubernetes.io/ingress.class: "external"
+          kubernetes.io/ingress.class: "nginx"
           external-dns.alpha.kubernetes.io/exclude: "true"
         hosts:
         - host: "sabnzbd.${SECRET_CLUSTER_DOMAIN}"

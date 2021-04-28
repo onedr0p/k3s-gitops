@@ -5,7 +5,7 @@ metadata:
   name: webhook-receiver
   namespace: flux-system
   annotations:
-    kubernetes.io/ingress.class: "external"
+    kubernetes.io/ingress.class: "nginx"
     external-dns.alpha.kubernetes.io/target: "ext.${SECRET_CLUSTER_DOMAIN}"
     external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
 spec:
